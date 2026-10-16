@@ -64,8 +64,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/JuliaStrings/utf8proc.git
-        commit: e5e799221b45bbb90f5fdc5c69b6b8dfbf017e78
-        tag: v2.11.3
+        commit: 79cdd5ab40c79afa559f689ffc13b76812dee1ac
+        tag: v2.12.0
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
@@ -107,8 +107,8 @@ modules:
     sources:
       - type: git
         url: https://codeberg.org/dnkl/foot.git
-        commit: de998602dbc00c8862a6823d553cbb1df91c676d
-        tag: 1.27.0
+        commit: ab33c9a19d626f8d0ac0bd1adfdba21946ada948
+        tag: 1.28.0
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
