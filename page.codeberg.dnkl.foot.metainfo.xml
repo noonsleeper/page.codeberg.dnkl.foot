@@ -92,7 +92,7 @@
                     <li>Incorrect word boundary detection when selection words with a multi-column
                         character in the last column (#2411).</li>
                     <li>reallocarray() is no longer required, so as to support platforms where libc
-                        doesn't include it (e.g. Termux + Android API < 29).</li>
+                        doesn't include it (e.g. Termux + Android API &lt; 29).</li>
                     <li>Crash in select-quote when the right-side quote appeared right after a
                         newline, in column 0 (#2405).</li>
                     <li>Resizing a terminal window may break current selection.</li>
