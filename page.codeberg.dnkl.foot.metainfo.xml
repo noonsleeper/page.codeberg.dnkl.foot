@@ -54,13 +54,8 @@
                         cursor move (#2383).</li>
                     <li>Dracula theme updated to latest official, and light theme alucard added.</li>
                     <li>Sixels: pan/pad clamped to 5 (#2371).</li>
-                    <li>Default URL regex changed to: <ul>
-                            <li>allow single quotes (') inside the URL (but not at the end, unless
-                        balanced).</li>
-                            <li>require at least one character inside balanced [], (), '' or "".
-                        (#2417).</li>
-                        </ul>
-                    </li>
+                    <li>Default URL regex changed to: allow single quotes (') inside the URL (but not at the end, unless
+                        balanced). Also require at least one character inside balanced [], (), '' or "". (#2417).</li>
                     <li>Foot now sets window urgency when a notification is activated, and foot
                         hasn't received an XDG activation token.</li>
                     <li>-D,--working-directory now supports file:// URIs.</li>
@@ -78,7 +73,8 @@
                         (#2353).</li>
                     <li>DECCRA not clamping or verifying the destination rectangle (#2352).</li>
                     <li>Empty selection clearing the clipboard (#2327).</li>
-                    <li>Require xkbcommon >= 1.6.0. This has been the case for a while, due to our
+                    <li>Require xkbcommon &gt;= 1.6.0. This has been the case for a while, due to
+                        our
                         use of XKB_KEYSYM_MAX. Now it is formalized in meson.build (#2379).</li>
                     <li>Block selection area incorrectly updated when selecting back across the
                         starting column.</li>
