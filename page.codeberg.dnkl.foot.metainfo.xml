@@ -54,8 +54,10 @@
                         cursor move (#2383).</li>
                     <li>Dracula theme updated to latest official, and light theme alucard added.</li>
                     <li>Sixels: pan/pad clamped to 5 (#2371).</li>
-                    <li>Default URL regex changed to: allow single quotes (') inside the URL (but not at the end, unless
-                        balanced). Also require at least one character inside balanced [], (), '' or "". (#2417).</li>
+                    <li>Default URL regex changed to: allow single quotes (') inside the URL (but
+                        not at the end, unless
+                        balanced). Also require at least one character inside balanced [], (), '' or
+                        "". (#2417).</li>
                     <li>Foot now sets window urgency when a notification is activated, and foot
                         hasn't received an XDG activation token.</li>
                     <li>-D,--working-directory now supports file:// URIs.</li>
