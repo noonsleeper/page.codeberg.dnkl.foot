@@ -125,6 +125,7 @@
                     <li>Tim Culverhouse</li>
                 </ul>
             </description>
+            <url>https://codeberg.org/dnkl/foot/releases/tag/1.28.0</url>
         </release>
         <release version="1.27.0" date="2026-05-15">
             <description>
