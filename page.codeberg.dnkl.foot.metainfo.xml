@@ -38,7 +38,93 @@
     </screenshots>
     <releases>
         <release version="1.28.0" date="2026-10-16">
-            <description></description>
+            <description>
+                <p>Added</p>
+                <ul>
+                    <li>Command line option --class, an alias for --app-id. Intended to be used by
+                        scripts and similar that wants to launch terminal instances in a terminal
+                        agnostic way (#2368).</li>
+                    <li>Support for terminal visibility reports, using the Wayland xdg_toplevel
+                        suspended state.</li>
+                    <li>Support for wl_fixes::ack_global_remove().</li>
+                </ul>
+                <p>Changed</p>
+                <ul>
+                    <li>Do not allow codepoints to be merged into grapheme clusters directly after a
+                        cursor move (#2383).</li>
+                    <li>Dracula theme updated to latest official, and light theme alucard added.</li>
+                    <li>Sixels: pan/pad clamped to 5 (#2371).</li>
+                    <li>Default URL regex changed to: <ul>
+                            <li>allow single quotes (') inside the URL (but not at the end, unless
+                        balanced).</li>
+                            <li>require at least one character inside balanced [], (), '' or "".
+                        (#2417).</li>
+                        </ul>
+                    </li>
+                    <li>Foot now sets window urgency when a notification is activated, and foot
+                        hasn't received an XDG activation token.</li>
+                    <li>-D,--working-directory now supports file:// URIs.</li>
+                </ul>
+                <p>Removed</p>
+                <ul>
+                    <li>[colors] and [colors2] config sections, and the corresponding
+                        color-theme-switch-1 and color-theme-switch-2 key bindings.</li>
+                    <li>These were deprecated in 1.26.0, and were replaced by [colors-dark],
+                        [colors-light], color-theme-switch-dark and color-theme-switch-light.</li>
+                </ul>
+                <p>Fixed</p>
+                <ul>
+                    <li>Out-of-bounds read when parsing URIs with malformed %-encoded content
+                        (#2353).</li>
+                    <li>DECCRA not clamping or verifying the destination rectangle (#2352).</li>
+                    <li>Empty selection clearing the clipboard (#2327).</li>
+                    <li>Require xkbcommon >= 1.6.0. This has been the case for a while, due to our
+                        use of XKB_KEYSYM_MAX. Now it is formalized in meson.build (#2379).</li>
+                    <li>Block selection area incorrectly updated when selecting back across the
+                        starting column.</li>
+                    <li>Passing a very large value as CHT/CBT argument hangs the terminal (#2360).</li>
+                    <li>Sixel: crash when using a shared palette and gamma-correct blending has been
+                        enabled, or foot is using 10-bit surface (#2370).</li>
+                    <li>Kitty text-size protocol: fix crash when text is zero-length (#2364).</li>
+                    <li>Escape quotes in file names being DnD:ed on the command line (#2363).</li>
+                    <li>Crash in --server mode, when a tracked notification is closed after the
+                        associated terminal instance has been closed (#2397).</li>
+                    <li>Incorrect word boundary detection when selection words with a multi-column
+                        character in the last column (#2411).</li>
+                    <li>reallocarray() is no longer required, so as to support platforms where libc
+                        doesn't include it (e.g. Termux + Android API < 29).</li>
+                    <li>Crash in select-quote when the right-side quote appeared right after a
+                        newline, in column 0 (#2405).</li>
+                    <li>Resizing a terminal window may break current selection.</li>
+                    <li>Crash when closing a window that touch input focus.</li>
+                    <li>Application mouse grabbing not working when there is no keymap available.</li>
+                    <li>Crash when a buggy compositor sends a keyboard_enter() event with a NULL
+                        surface (#2438).</li>
+                    <li>Crash when clicking without moving the mouse after resizing the window, and
+                        the clicked area is now outside the cell grid (#2435).</li>
+                    <li>Modifiers in mouse-bindings colliding with the modifiers in
+                        selection-override-modifiers not always detected.</li>
+                    <li>selection-override-modifiers=none preventing applications from grabbing the
+                        mouse.</li>
+                </ul>
+                <p>Contributors</p>
+                <ul>
+                    <li>0WD0</li>
+                    <li>airkoala</li>
+                    <li>aloires</li>
+                    <li>Campbell Barton</li>
+                    <li>CismonX</li>
+                    <li>Craig Barnes</li>
+                    <li>Emily Vlasics</li>
+                    <li>fhqh</li>
+                    <li>K4</li>
+                    <li>koru</li>
+                    <li>lumerue</li>
+                    <li>Marinus Klasen</li>
+                    <li>sentriz</li>
+                    <li>Tim Culverhouse</li>
+                </ul>
+            </description>
         </release>
         <release version="1.27.0" date="2026-05-15">
             <description>
@@ -169,30 +255,12 @@
             </description>
             <url>https://codeberg.org/dnkl/foot/releases/tag/1.26.0</url>
         </release>
-        <release version="1.20.2" date="2025-01-18"/>
-        <release version="1.20.1" date="2025-01-03"/>
-        <release version="1.20.0" date="2025-01-01"/>
-        <release version="1.19.0" date="2024-10-23"/>
-        <release version="1.18.1" date="2024-08-14"/>
-        <release version="1.18.0" date="2024-08-02"/>
-        <release version="1.17.2" date="2024-04-17"/>
-        <release version="1.17.1" date="2024-04-11"/>
-        <release version="1.17.0" date="2024-04-02"/>
-        <release version="1.16.2" date="2023-10-17"/>
-        <release version="1.16.1" date="2023-10-12"/>
-        <release version="1.16.0" date="2023-10-11"/>
-        <release version="1.15.3" date="2023-08-07"/>
-        <release version="1.15.2" date="2023-07-30"/>
-        <release version="1.15.1" date="2023-07-21"/>
-        <release version="1.15.0" date="2023-07-14"/>
-        <release version="1.14.0" date="2023-04-03"/>
-        <release version="1.13.1" date="2022-08-31"/>
-        <release version="1.13.0" date="2022-08-07"/>
+        <release version="1.20.2" date="2025-01-18" />
     </releases>
     <launchable type="desktop-id">page.codeberg.dnkl.foot.desktop</launchable>
     <url type="homepage">https://codeberg.org/dnkl/foot</url>
     <url type="bugtracker">https://codeberg.org/dnkl/foot/issues</url>
     <url type="vcs-browser">https://codeberg.org/dnkl/foot</url>
     <url type="help">https://codeberg.org/dnkl/foot/wiki</url>
-    <content_rating type="oars-1.1"/>
+    <content_rating type="oars-1.1" />
 </component>
